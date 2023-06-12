@@ -47,8 +47,7 @@
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a href="index.html" <%- current.source == 'index' ? 'class="active"' : '' %>>Home</a></li>
+        <ul>          
           <li><a href="about.html" <%- current.source == 'about' ? 'class="active"' : '' %>>Über uns</a></li>          
           <li><a href="pricelist.html" <%- current.source == 'pricelist' ? 'class="active"' : '' %>>Leistungen &amp; Preise</a></li>
           <li class="nav-item dropdown" style="display: none;">
@@ -73,7 +72,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item disabled" href="#"><img src="assets/img/lang/ger.png"> Deutsch</a></li>
-              <li><a class="dropdown-item" href="ru/index.html"><img src="assets/img/lang/rus.png"> Russisch</a></li>
+              <li><a class="dropdown-item" href="ru/<%-current.source%>.html"><img src="assets/img/lang/rus.png"> Русский</a></li>
             </ul>
           </li>
         </ul>

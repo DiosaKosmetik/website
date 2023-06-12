@@ -48,10 +48,10 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html" <%- current.source == 'index' ? 'class="active"' : '' %>>Home</a></li>
-          <li><a href="about.html" <%- current.source == 'about' ? 'class="active"' : '' %>>Über uns</a></li>          
-          <li><a href="pricelist.html" <%- current.source == 'pricelist' ? 'class="active"' : '' %>>Leistungen &amp; Preise</a></li>
-          <li class="nav-item dropdown" style="display: none;">
+          
+          <li><a href="about.html" <%- current.source == 'about' ? 'class="active"' : '' %>>О нас</a></li>          
+          <li><a href="pricelist.html" <%- current.source == 'pricelist' ? 'class="active"' : '' %>>Услуги и цены</a></li>
+          <li class="nav-item dropdown" style="display: inherit;">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ausbildung &amp; Schulungen
             </a>
@@ -66,14 +66,12 @@
           </li>
 
 
-          <li><a href="contact.html" <%- current.source == 'contact' ? 'class="active"' : '' %>>Kontakt</a></li>
+          <li><a href="contact.html" <%- current.source == 'contact' ? 'class="active"' : '' %>>Контакт</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sprache
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Язык</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item disabled" href="#"><img src="assets/img/lang/ger.png"> Deutsch</a></li>
-              <li><a class="dropdown-item" href="index_ru.html"><img src="assets/img/lang/rus.png"> Russisch</a></li>
+              <li><a class="dropdown-item" href="../<%-current.source%>.html"><img src="../assets/img/lang/ger.png"> Deutsch</a></li>
+              <li aria-disabled="true" disabled><a class="dropdown-item disabled" href="index.html"><img src="../assets/img/lang/rus.png"> Русский</a></li>
             </ul>
           </li>
         </ul>
