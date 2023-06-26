@@ -23,6 +23,9 @@ rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <!-- =======================================================
 * Template Name: Kelly
 * Updated: May 30 2023 with Bootstrap v5.3.0
@@ -234,7 +237,7 @@ zugeschnitten ist.
 <footer id="footer">
 <div class="container">
 <div class="copyright">
-&copy; Copyright <strong><span>Diosa Kosmetik</span></strong>. All Rights Reserved
+Copyright &copy; <script>document.write(new Date().getFullYear())</script> <strong><span>Diosa Kosmetik</span></strong>. All Rights Reserved
 </div>
 </div>
 </footer><!-- End  Footer -->
@@ -259,6 +262,22 @@ window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-1ZJVYBXM64');
+</script>
+<script>
+window.cookieconsent.initialise({
+"palette": {
+"popup": { "background": "#e9e8e6", "text": "#444444" },
+"button": { "background": "#34b7a7", "text": "#ffffff" }
+},
+"theme": "edgeless",
+"position": "bottom-right",
+"content": {
+"message": "Diese Webseite verwendet Cookies, um Ihnen ein angenehmeres Surfen zu ermöglichen.",
+"dismiss": "Verstanden!",
+"link": "Mehr...",
+"href": "https://www.cookiesandyou.com/"
+}
+});
 </script>
 </body>
 </html>
