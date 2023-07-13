@@ -1,29 +1,11 @@
 <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- ======= Data Section ======= -->
+    <section id="data" class="data">
         <div class="container" data-aos="fade-up">
-
-
 
             <h1>__filename </h1>
             <pre>
                 <%= __filename %>
-            </pre>
-
-            <h1>current.source </h1>
-            <pre>
-                <%= current.source %>
-            </pre>
-
-            <h1>current.path </h1>
-            <pre>
-                <%= current.path %>
-            </pre>
-
-            <h1>global.key </h1>
-            <pre>
-                <%= Object.getOwnPropertyNames(global.key) %>
             </pre>
 
             <h1>dirname(__filename) </h1>
@@ -31,7 +13,6 @@
                 <%= "TDDO:"+__filename %>
             </pre>
             
-
             <h1>RootPath? </h1>
             <pre>
                 <%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>
