@@ -1,0 +1,57 @@
+<% function getRootPath(){ let
+  arr=["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+  if(arr.includes(current.source)) { return "../../" ; } else { return "../" ; } } %>
+
+<main id="main">
+
+  <!-- ======= TRAINING ======= -->
+  <section class="training">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Уход за кожей</h2>
+        <p>
+          <strong>Внимание:</strong>
+          Этот курс находится еще в разработке и скоро будет доступен.
+          Если вы заинтересованы в одном из этих курсов, пожалуйста, свяжитесь с нами через Instagram.
+        </p>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="<%=getRootPath()%>assets/img/book.png" class="img img-fluid" />
+        </div>
+        <div class="col-lg-8">
+          <h3>Bonusmaterial</h3>
+          <p>
+            Dieser praxisorientierter Onlinekurs wurde entworfen, um direkt mit der Behandlung beginnen zu können. Bei
+            Fragen steht Ihnen der Trainer immer und zu jeder Zeit - per Mail - zur Verfügung.
+          </p>
+          <p>
+            Ein Trainingsset mit allen Materialien - je nach Kursbuchung versenden wir an unsere Teilnehmer innerhalb
+            Deutschland.
+          </p>
+          Dazu gibt es:
+          <ul>
+            <li>Kursbuch mit Materialübersicht</li>
+            <li>Kursbuch mit Abarbeitungsprotokoll</li>
+            <li>Personalisiertes Zertifikat</li>
+            <li>Kontakt zur Kursleitung</li>
+          </ul>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <a href="https://amzn.to/45ecVUb" target="_blank" class="a-hover">
+            <img src="<%=getRootPath()%>assets/img/amazon.png" class="mx-auto d-block" />
+          </a>
+        </div>
+        <div class="col-lg-8">
+          <a class="btn btn-primary btn-lg w-100"><strong>Preis: 489,00 €</strong></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>

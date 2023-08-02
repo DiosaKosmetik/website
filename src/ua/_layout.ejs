@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="ua">
-
+  <% 
+  function getRootPath(){
+    let arr = ["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+    if(arr.includes(current.source))
+    { 
+      return "../../"; 
+    }
+    else 
+    {  
+      return "../"; 
+    }      
+  }
+  function getLangRootPath(lang,isroot=false){
+    let arr = ["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+    if(arr.includes(current.source))
+    { 
+      return isroot?"../../training/"+current.source+".html" : "../../"+lang+"/training/"+current.source+".html"; 
+    }
+    else 
+    {  
+      return isroot?"../"+current.source+".html":"../"+lang+"/"+current.source+".html"; 
+    }
+  }
+  %>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">

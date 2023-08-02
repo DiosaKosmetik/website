@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="de">
-
+  <% 
+  function getRootPath(){
+    let arr = ["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+    if(arr.includes(current.source))
+    { 
+      return "../../"; 
+    }
+    else 
+    {  
+      return "../"; 
+    }      
+  }
+  function getLangRootPath(lang,isroot=false){
+    let arr = ["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+    if(arr.includes(current.source))
+    { 
+      return isroot?"../../training/"+current.source+".html" : "../../"+lang+"/training/"+current.source+".html"; 
+    }
+    else 
+    {  
+      return isroot?"../"+current.source+".html":"../"+lang+"/"+current.source+".html"; 
+    }
+  }
+  %>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -13,8 +36,8 @@
   
   
   <!-- Favicons -->
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/favicon.png" rel="icon">
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<%= getRootPath() %>assets/img/favicon.png" rel="icon">
+  <link href="<%= getRootPath() %>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link
@@ -22,16 +45,16 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 
   <!-- Template Main CSS File -->
-  <link href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/css/style.css" rel="stylesheet">
+  <link href="<%= getRootPath() %>assets/css/style.css" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
@@ -52,47 +75,43 @@
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">DIOSA KOSMETIK</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>index.html">DIOSA KOSMETIK</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="about.html" <%- current.source=='about' ? 'class="active"' : '' %>>Über uns</a></li>
-          <li><a href="pricelist.html" <%- current.source=='pricelist' ? 'class="active"' : '' %>>Leistungen &amp;
+          <li><a href="<%= getRootPath() %>about.html" <%- current.source=='about' ? 'class="active"' : '' %>>Über uns</a></li>
+          <li><a href="<%= getRootPath() %>pricelist.html" <%- current.source=='pricelist' ? 'class="active"' : '' %>>Leistungen &amp;
               Preise</a></li>
 
-          <li class="nav-item dropdown" style="display: none;">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ausbildung &amp; Schulungen
+              Schulungen
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Kosmetiker/-in Ausbildung <span
-                    class="flex-end">&nbsp;Offline</span></a></li>
-              <li><a class="dropdown-item" href="#">Aufgenbraun und Wimpernlifting <span
-                    class="flex-end">&nbsp;Online</span></a></li>
-              <li><a class="dropdown-item" href="#">Classic Gesichtsmassage <span
-                    class="flex-end">&nbsp;Online</span></a></li>
-              <li><a class="dropdown-item" href="#">Gesichtsbehandlung <span class="flex-end">&nbsp;Online</span></a>
-              </li>
-              <li><a class="dropdown-item" href="#">Microneedling <span class="flex-end">&nbsp;Online</span></a></li>
-              <li><a class="dropdown-item" href="#">Sozial Beauty Marketing <span
-                    class="flex-end">&nbsp;Online</span></a></li>
+
+                    <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/skincare.html">Gesichtsbehandlung Professional (Certificate Course) <span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+                    <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/face_massage.html">Gesichtsmassagen Techniken Professional (Certificate Course) <span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+                    <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/lash_and_brow_lifting.html">Lash- und Brow Lifting Professional (Certificate Course) &nbsp;<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>              
+                    <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/microneedling.html">Microneedling Professional (Certificate Course)<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+                    <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/social_media_marketing.html">Sozial Media Marketing Professional (Certificate Course)<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+
             </ul>
           </li>
 
 
-          <li><a href="contact.html" <%- current.source=='contact' ? 'class="active"' : '' %>>Kontakt</a></li>
+          <li><a href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>contact.html" <%- current.source=='contact' ? 'class="active"' : '' %>>Kontakt</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Sprache
             </a>
             <ul class="dropdown-menu">
-              <li class="d-none"><a class="dropdown-item disabled" href="#"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/ger.png">
+              <li class="d-none"><a class="dropdown-item disabled" href="#"><img src="<%= getRootPath() %>assets/img/lang/ger.png">
                   Deutsch</a></li>
-              <li><a class="dropdown-item" href="../<%-current.source%>.html"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/rus.png">
+              <li><a class="dropdown-item" href="<%-getLangRootPath("ru",true)%>"><img src="<%= getRootPath() %>assets/img/lang/rus.png">
                   Русский</a></li>
-              <li><a class="dropdown-item" href="../ua/<%-current.source%>.html"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/ukr.png">
+              <li><a class="dropdown-item" href="<%-getLangRootPath("ua") %>"><img src="<%= getRootPath() %>assets/img/lang/ukr.png">
                   Українська</a></li>
             </ul>
           </li>
@@ -127,17 +146,17 @@
         class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/aos/aos.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/vendor/php-email-form/validate.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/aos/aos.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="<%= getRootPath() %>assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/js/main.js"></script>
+    <script src="<%= getRootPath() %>assets/js/main.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZJVYBXM64"></script>

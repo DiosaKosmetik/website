@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+  <% 
+  function getRootPath(){
+    if(process.cwd()+"\\src\\"+current.source+".ejs"==__filename)
+    { 
+      return ""; 
+    }
+    else 
+    {  
+      return "../"; 
+    }
+  }
+  function getLangRootPath(lang){
+    let arr = ["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+    if(arr.includes(current.source))
+    { 
+      return "../"+lang+"/training/"+current.source+".html"; 
+    }
+    else 
+    {  
+      return "../"+lang+"/"+current.source+".html"; 
+    }
+  }
+  %>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <meta var__filename="<%=current.source%>">
   <title><%= title %></title>
   <meta content="<%= description %>" name="description">
   <meta content="<%= keywords %>" name="keywords">
@@ -53,42 +75,36 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
 
-          <li><a href="about.html" <%- current.source=='about' ? 'class="active"' : '' %>>О нас</a></li>
-          <li><a href="pricelist.html" <%- current.source=='pricelist' ? 'class="active"' : '' %>>Услуги и цены</a></li>
+          <li><a href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>about.html" <%- current.source=='about' ? 'class="active"' : '' %>>О нас</a></li>
+          <li><a href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>pricelist.html" <%- current.source=='pricelist' ? 'class="active"' : '' %>>Услуги и цены</a></li>
 
 
 
 
-          <li class="nav-item dropdown" style="display: none;">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Образование и обучение
+              Обучение
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Обучение косметологу <span class="flex-end">&nbsp;Offline</span></a>
-              </li>
-              <li><a class="dropdown-item" href="#">Классический массаж лица <span
-                    class="flex-end">&nbsp;Online</span></a></li>
-              <li><a class="dropdown-item" href="#">Aufgenbraun und Wimpernlifting <span
-                    class="flex-end">&nbsp;Online</span></a></li>
-              <li><a class="dropdown-item" href="#">Gesichtsbehandlung <span class="flex-end">&nbsp;Online</span></a>
-              </li>
-              <li><a class="dropdown-item" href="#">Microneedling <span class="flex-end">&nbsp;Online</span></a></li>
-              <li><a class="dropdown-item" href="#">Sozial Beauty Marketing <span
-                    class="flex-end">&nbsp;Online</span></a></li>
+              <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/skincare.html">Уход за кожей Professional (Certificate Course)<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+              <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/face_massage.html">Массаж лица Professional (Certificate Course)<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+              <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/microneedling.html">Микронидлинг Professional (Certificate Course)<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
+              <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/lash_and_brow_lifting.html">Ламинирование бровей и ресниц Professional (Certificate Course)&nbsp;<span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>                            
+              <li><a class="dropdown-item" href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>training/social_media_marketing.html">Маркетинг в области СМИ Professional (Certificate Course) <span class="flex-end badge rounded-pill bg-success">&nbsp;Online</span></a></li>
             </ul>
           </li>
 
 
-          <li><a href="contact.html" <%- current.source=='contact' ? 'class="active"' : '' %>>Контакт</a></li>
+          <li><a href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>contact.html" <%- current.source=='contact' ? 'class="active"' : '' %>>Контакт</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Язык</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../de/<%-current.source%>.html"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/ger.png">
+              <li><a class="dropdown-item" href="<%=getLangRootPath("de") %>"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/ger.png">
                   Deutsch</a></li>
               <li class="d-none"><a class="dropdown-item disabled" href="#"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/rus.png">
                   Русский</a></li>
-              <li><a class="dropdown-item" href="../ua/<%-current.source%>.html"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/ukr.png">
+              <li><a class="dropdown-item" href="<%=getLangRootPath("ua") %>"><img src="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>assets/img/lang/ukr.png">
                   Українська</a></li>
             </ul>
           </li>

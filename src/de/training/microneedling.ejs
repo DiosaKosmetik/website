@@ -1,0 +1,111 @@
+<% function getRootPath(){ let
+  arr=["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
+  if(arr.includes(current.source)) { return "../../" ; } else { return "../" ; } } %>
+  <main id="main">
+
+    <!-- ======= TRAINING ======= -->
+    <section class="training">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Microneedling Professional</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="<%=getRootPath()%>assets/img/training/microneedling.jpg" class="img img-fluid" />
+          </div>
+          <div class="col-lg-8">
+            <p>Microneedling wird sowohl für das Gesicht und den Körper als auch für die Kopfhaut eingesetzt. Dieses
+              Verfahren ist eine hervorragende und schonende Alternative zu Laserbehandlungen, Peelings und plastischen
+              Eingriffen im Gesicht.</p>
+            <p>Durch die Zerstörung des Hautgewebes zwingen diese Mikropunkturen den Körper, die Heilungsreaktionen zu
+              intensivieren, indem er neue Zellen im behandelten Bereich bildet, wodurch die Haut verjüngt und erneuert
+              wird. Es findet eine Kombination aus Nappagetechnik und mikroinvasiver Therapie statt.</p>
+            <p>Mikroperforationen der Haut stimulieren die Reparaturprozesse des Gewebes und erhöhen die
+              Absorptionseffizienz von Wirkstoffen, die in therapeutischen oder kosmetischen Präparaten enthalten sind.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-8">
+            <h3>Warum Weiterbildung wichtig ist?</h3>
+            <ul>
+              <li>Weiterbildung ist der Schlüssel zu beruflichem Erfolg</li>
+              <li>Erweitern Sie Ihr Behandlungsangebot und Fachwissen</li>
+              <li>Praxisrelevante Seminarinhalte</li>
+              <li>Alle Seminare mit Arbeitsbuch und offiziellem Zertifikat</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-8">
+            <h3>Kursziel</h3>
+            <p>
+              Ziel dieser Schulung ist die sofortige Umsetzung in die Praxis. Die Produkte und Geräte können so
+              ausgewählt
+              werden, dass es keine große Investition benötigt. Im Kurs werden Fragen über Behandlungskosten besprochen,
+              aber auch rechtliche Grundlagen und mögliche Werbemaßnahmen. Einen Haftungsausschluss und
+              Behandlungsvertrag
+              zum Nachdruck stellen wir zur Verfügung.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-8">
+            <h3>Kursinhalt</h3>
+            <ul>
+              <li>Vorstellung</li>
+              <li>Behandlungsmöglichkeiten</li>
+              <li>Aufbau der Hautt</li>
+              <li>Materialien</li>
+              <li>Wirkstoffgemische</li>
+              <li>Verhaltensregeln</li>
+              <li>Microneedling: Anwendungsgebiete</li>
+              <li>Microneedling: Wirkung</li>
+              <li>Reinigung</li>
+              <li>Enzympeeling</li>
+              <li>Microneedling: Auswahl: Präperat & Gerät</li>
+              <li>Hydratation</li>
+              <li>Repair</li>
+              <li>Protect</li>
+              <li>Homecare</li>
+              <li>Weitere Behandlungsmöglichkeiten</li>
+              <li>Preisstruktur / Preiskalkulation</li>
+              <li>Abschluss</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-8">
+            <h3>Vorteile von Mikroneedling</h3>
+            <p>
+            <ul>
+              <li>SICHERHEIT</li>
+              <li>KURZE REHABILITATIONSZEIT</li>
+              <li>SCHNELLES ERGEBNIS</li>
+              <li>SICHTBARE ÄSTHETISCHE WIRKUNG</li>
+              <li>MÄSSIGE SCHMERZEN BEI DER BEHANDLUNG</li>
+              <li>ALTERNATIVE ZU ANDEREN INJEKTIONSMETHODEN</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+
+
+        <%- partial("_benefits")%>
+
+        <%- partial("_order")%>
+      </div>
+    </section>
+  </main>
