@@ -1301,6 +1301,10 @@ section {
   font-weight: bold;
 }
 
+.training .row {
+  margin-top: 50px;
+}
+
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #34b7a7 !important;
   border-color: #24b7a7 !important;
@@ -1317,3 +1321,4 @@ section {
 .a-hover:hover{
   opacity: 0.9;
 }
+
