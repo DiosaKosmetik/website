@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
   <% 
-  function getRootPath(){
+  function getRootPath(lang=undefined){
     let arr = ["skincare","face_massage","lash_and_brow_lifting","microneedling","social_media_marketing"];
     if(arr.includes(current.source))
     { 
-      return "../../"; 
+      return lang==undefined?"../../":"../../"+lang+"/"; 
     }
     else 
     {  
-      return "../"; 
+      return lang==undefined?"../":"../"+lang+"/"; 
     }      
   }
   function getLangRootPath(lang,isroot=false){
@@ -81,8 +81,8 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="<%= getRootPath() %>about.html" <%- current.source=='about' ? 'class="active"' : '' %>>Über uns</a></li>
-          <li><a href="<%= getRootPath() %>pricelist.html" <%- current.source=='pricelist' ? 'class="active"' : '' %>>Leistungen &amp;
+          <li><a href="<%= getRootPath("de") %>about.html" <%- current.source=='about' ? 'class="active"' : '' %>>Über uns</a></li>
+          <li><a href="<%= getRootPath("de") %>pricelist.html" <%- current.source=='pricelist' ? 'class="active"' : '' %>>Leistungen &amp;
               Preise</a></li>
 
           <li class="nav-item dropdown">
@@ -101,7 +101,7 @@
           </li>
 
 
-          <li><a href="<%= process.cwd()+"\\src\\"+current.source+".ejs"==__filename?"":"../" %>contact.html" <%- current.source=='contact' ? 'class="active"' : '' %>>Kontakt</a></li>
+          <li><a href="<%= getRootPath("de") %>contact.html" <%- current.source=='contact' ? 'class="active"' : '' %>>Kontakt</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Sprache
